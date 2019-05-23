@@ -63,6 +63,7 @@ namespace StackTests
         }
     }
 
+    // Making the MyStack generic
     public class MyStack<T>
     {
 
