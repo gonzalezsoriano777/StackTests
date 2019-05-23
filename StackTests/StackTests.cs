@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StackTests
@@ -25,15 +26,18 @@ namespace StackTests
             Assert.IsFalse(stack.IsEmpty);
         }
 
+        
         public void Pop_EmptyStack_ThrowsException()
         {
             var stack = new MyStack<int>();
 
+            
             Assert.ThrowsException<InvalidOperationException>(() =>
             {
                 stack.Pop();
             });
         }
+
 
         public void Peek_PushTwoItems_ReturnsHeadItem()
         {
@@ -42,25 +46,35 @@ namespace StackTests
             stack.Push(1);
             stack.Push(2);
 
+            Assert.AreEqual(2, stack.Peek());
+
             
         }
     }
 
     public class MyStack<T>
     {
-        public bool IsEmpty => Count == 0;        
 
-        public int Count { get; private set;  }
+        private List<T> _list = new List<T>();
+
+        public bool IsEmpty => Count == 0;
+
+        public int Count => _list.Count;
 
         public void Push(T value)
         {
-            Count++;
+            _list.Add(value);
         }
 
         public void Pop()
         {
             if (IsEmpty)
                 throw new InvalidOperationException();
+        }
+
+        public T Peek()
+        {
+            return _list[Count - 1];
         }
     }
 }
