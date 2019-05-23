@@ -17,6 +17,8 @@ namespace StackTests
         public void Count_PushOneItem_ReturnOne()
         {
             var stack = new MyStack<int>();
+
+            // this will throw an agruement, if value was not implemented
             stack.Push(1);
 
             Assert.AreEqual(1, stack.Count);
@@ -34,9 +36,9 @@ namespace StackTests
 
         public int Count { get; private set;  }
 
-        public void Push
+        public void Push(T value)
         {
-
+            throw new NotImplementedException();
         }
     }
 }
