@@ -50,7 +50,17 @@ namespace StackTests
 
         }
 
-        public void 
+        public void Peek_PushTwoItemsAndPop_ReturnsHeadElement()
+        {
+            var stack = new MyStack<int>();
+
+            stack.Push(1);
+            stack.Push(2);
+
+            stack.Pop();
+
+            Assert.AreEqual(1, stack.Peek());
+        }
     }
 
     public class MyStack<T>
@@ -71,6 +81,7 @@ namespace StackTests
         {
             if (IsEmpty)
                 throw new InvalidOperationException();
+            _list.RemoveAt(Count - 1);
         }
 
         public T Peek()
