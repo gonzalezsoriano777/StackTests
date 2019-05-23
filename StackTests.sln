@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTests", "StackTests\StackTests.csproj", "{CEF5E54F-9D1C-4587-9F2A-6F02B3B75AD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KATAS", "StackTests\KATAS.csproj", "{CEF5E54F-9D1C-4587-9F2A-6F02B3B75AD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
