@@ -23,16 +23,12 @@ namespace StackTests
 
             Assert.AreEqual(1, stack.Count);
             Assert.IsFalse(stack.IsEmpty);
-
         }
     }
 
     public class MyStack<T>
     {
-        public bool IsEmpty
-        {
-            get { return true; }
-        }
+        public bool IsEmpty => Count == 0;        
 
         public int Count { get; private set;  }
 
