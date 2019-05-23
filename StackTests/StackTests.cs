@@ -9,7 +9,7 @@ namespace StackTests
         [TestMethod]
         public void IsEmpty_EmptyStack_ReturnsTrue()
         {
-            MyStack stack = new MyStack<int>();
+            var stack = new MyStack<int>();
             Assert.IsTrue(stack.IsEmpty);
         }
 
@@ -29,6 +29,10 @@ namespace StackTests
         {
             var stack = new MyStack<int>();
 
+            Assert.ThrowsException<InvalidOperationException>(() =>
+            {
+                stack.Pop();
+            });
         }
 
         public void Peek_PushTwoItems_ReturnsHeadItem()
@@ -38,7 +42,7 @@ namespace StackTests
             stack.Push(1);
             stack.Push(2);
 
-            Assert.(2, stack.)
+            
         }
     }
 
@@ -50,7 +54,13 @@ namespace StackTests
 
         public void Push(T value)
         {
-            throw new NotImplementedException();
+            Count++;
+        }
+
+        public void Pop()
+        {
+            if (IsEmpty)
+                throw new InvalidOperationException();
         }
     }
 }
