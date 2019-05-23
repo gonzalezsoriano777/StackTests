@@ -48,8 +48,9 @@ namespace StackTests
 
             Assert.AreEqual(2, stack.Peek());
 
-            
         }
+
+        public void 
     }
 
     public class MyStack<T>
