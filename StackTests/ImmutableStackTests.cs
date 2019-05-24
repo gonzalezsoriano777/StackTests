@@ -30,7 +30,7 @@ namespace StackTests
                 throw new NotImplementedException();
             }
 
-           public bool IsEmpty { get; }
+            public bool IsEmpty => true;
         }
 
         public IStack<T> Push(T value)
@@ -48,6 +48,6 @@ namespace StackTests
             throw new NotImplementedException();
         }
 
-        public bool IsEmpty { get; }
+        public bool IsEmpty => true;
     }
 }
