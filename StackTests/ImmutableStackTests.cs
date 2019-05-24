@@ -5,11 +5,49 @@ namespace StackTests
 {
     public interface IStack<T>
     {
-        IStack<T> Peek(T value);
+        IStack<T> Push(T value);
         IStack<T> Pop();
         T Peek();
-        bool IsEmpty();
+        bool IsEmpty { get; }
     }
         
-        
+     public class ImmutableStack<T> : IStack<T>
+    {
+        private sealed class IsEmpty : IStack<T>
+        {
+            public IStack<T> Push (T value)
+            {
+                throw new NotImplementedException();
+            }
+
+            public IStack<T> Pop()
+            {
+                throw new NotImplementedException();
+            }
+
+            public T Peek()
+            {
+                throw new NotImplementedException();
+            }
+
+           public bool IsEmpty { get; }
+        }
+
+        public IStack<T> Push(T value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IStack<T> Pop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Peek()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsEmpty { get; }
+    }
 }
