@@ -3,12 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StackTests
 {
-    [TestClass]
-    public class ImmutableStackTests
+    public interface IStack<T>
     {
-        [TestMethod]
-        public void StackTests()
-        {
-        }
+        IStack<T> Peek(T value);
+        IStack<T> Pop();
+        T Peek();
+        bool IsEmpty();
     }
+        
+        
 }
