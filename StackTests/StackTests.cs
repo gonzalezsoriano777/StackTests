@@ -19,7 +19,7 @@ namespace StackTests
         {
             var stack = new MyStack<int>();
 
-            // this will throw an agruement, if value was not implemented
+            // this will throw an agruement,if value was not implemented
             stack.Push(1);
 
             Assert.AreEqual(1, stack.Count);
